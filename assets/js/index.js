@@ -9,8 +9,6 @@ const API_KEY2='76a666bccd3b622d2d5118638f5d0709';
 // console.log(url)
 
 
-
-
 console.log("hua");
 
 document.getElementById("submitSearchForm").onclick = function () {
@@ -19,18 +17,43 @@ document.getElementById("submitSearchForm").onclick = function () {
 
 
 function createSearchString() {
-    var country = document.getElementById("country").value;
+    var place = document.getElementById("place").value;
     var jobTitle = document.getElementById("jobTitle").value;
     var keywords = document.getElementById("keywords").value;
-    document.getElementById("pthere").innerHTML = jobTitle;
-    document.getElementById("pathere").innerHTML = keywords;
-    searchQuery = linkedInSearchString.concat('(', keywords, ')', ' - ' , jobTitle, ' AND ', country);
+
+    searchQuery = linkedInSearchString.concat('(', keywords, ')', ' - ' , jobTitle, ' AND ', place);
+    
     console.log(searchQuery);
+
+    var resultArray=[];
+
     var url1='https://cors-anywhere.herokuapp.com/https://serpapi.com/search.json?engine=google&q='+ searchQuery + '&api_key='+ API_KEY;
-    $.get(url1, function(data){
-        console.log(data);
-    })
+    if (place && jobTitle && keywords){
+        $.get(url1, function(data){
+            resultArray=data;
+            console.log(resultArray);
+            buildResultTable(resultArray);
+        })
+    }
+
+    function buildResultTable(resultArray){
+        var table=document.getElementById('resultTable');
+        console.log("reached build result table");
+        console.log("length of res" & resultArray.organic_results[length]);
+        var lengthOfResults=resultArray.organic_results.length;
+
+        for (var i=0; i<lengthOfResults; i++){
+            var row=`<tr class>
+                        <td> ${resultArray.organic_results[i].title} </td>
+                        <td> table.href= </td>
+                    </tr>`
+            table.innerHTML+=row
+                    
+        }
+    }
+    
 };
+
   
 
 // // fetch api
