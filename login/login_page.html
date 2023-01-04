@@ -16,17 +16,18 @@
             <img class="logo" src="sourcign_logo.jfif" alt="logo ">
 
             <h2>Welcome back!</h2>
-            <form id="form">
+            <form id="signin_form">
                 <label>
-                    <span>Email</span>
-                    <input type="email" id="email" />
+                    <span>Email*</span>
+                    <input type="email" id="signin_email" required />
                 </label>
                 <label>
-                    <span>Password</span>
-                    <input type="password" id="password" />
+                    <span>Password*</span>
+                    <input type="password" id="signin_password" required />
                 </label>
-                <p class="forgot-pass">Forgot password?</p>
-                <button type="submit" class="submit" onclick="SignIn()">Sign In</button>
+                
+                <p class="forgot-pass"> <a  class="forgot-pass" href="./forgot_password.html">Forgot password?</a>  </p>
+                <button type="submit" class="submit">Sign In</button>
                 <!-- <button type="button" class="fb-btn">Connect with <span>facebook</span></button> -->
             </form>
         </div>
@@ -51,18 +52,18 @@
                 <h2>Join us Today!!</h2>
                 <form id="signup_form">
                     <label>
-                        <span>Name</span>
-                        <input type="text" id="name" />
+                        <span>Name*</span>
+                        <input type="text" id="signup_name" required/>
                     </label>
                     <label>
-                        <span>Email</span>
-                        <input type="email" id="email" />
+                        <span>Email*</span>
+                        <input type="email" id="signup_email" required />
                     </label>
                     <label>
-                        <span>Password</span>
-                        <input type="password" id="password" />
+                        <span>Password*</span> <p id="errorMsg"></p>
+                        <input type="password" id="signup_password" required/>
                     </label>
-                    <button type="submit" class="submit" onclick="UserRegister()">Sign Up</button>
+                    <button type="submit" class="submit">Sign Up</button>
                     <!-- <button type="button" class="fb-btn">Join with <span>facebook</span></button> -->
                 </form>
             </div>
@@ -70,7 +71,9 @@
     </div>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+
     <script src="login_data.js"></script>
     <script src="login_page.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

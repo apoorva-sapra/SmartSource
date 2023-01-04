@@ -22,6 +22,14 @@ input, button {
   text-align: center;
 }
 
+#errorMsg{
+  text-shadow: pink;
+  text-justify: right;
+  color: rgb(231, 30, 194);
+  font-family:  Helvetica, Arial, sans-serif;
+  font-size: 8px;
+}
+
 .logo{
   width:200px;
   height:90px;
